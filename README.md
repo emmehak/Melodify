@@ -1,3 +1,4 @@
+![mp1](https://github.com/user-attachments/assets/6a6e761f-e479-4526-8d4d-0f2d1e406007)
 # Melodify 🎵
 
 **Melodify** is a modern, sleek music player web application built using HTML, CSS, and JavaScript. It fetches top songs using the Napster API and allows users to play, pause, and navigate through tracks seamlessly.
