@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melodify Music Player</title>
+  <link rel="icon" href="musical-note.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="music-player">
+    <div class="player-header">
+      <h1>Melodify</h1>
+      <p class="subheading">Your Personal Music Player</p>
+    </div>
+    
+    <div class="album-cover">
+      <img src="/api/placeholder/500/500?text=Melodify+Player" alt="Album Cover" id="cover">
+      <div class="overlay">
+        <div class="equalizer">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="song-details">
+      <h2 id="title">Song Title</h2>
+      <p id="artist">Artist Name</p>
+    </div>
+    
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <span id="duration">0:00</span>
+    </div>
+    
+    <div class="controls">
+      <button id="prev" class="control-btn">
+        <i class="fas fa-backward"></i>
+      </button>
+      <button id="play" class="control-btn main-btn">
+        <i class="fas fa-play"></i>
+      </button>
+      <button id="next" class="control-btn">
+        <i class="fas fa-forward"></i>
+      </button>
+    </div>
+    
+    <div class="volume-container">
+      <i class="fas fa-volume-down"></i>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+      <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <div class="tabs">
+      <button class="tab-button active" data-tab="library-tab">Library</button>
+      <button class="tab-button" data-tab="search-tab">Search</button>
+      <button class="tab-button" data-tab="favorites-tab">Favorites</button>
+    </div>
+    
+    <div id="library-tab" class="tab-content">
+      <div class="playlist">
+        <h3>My Library</h3>
+        <ul id="playlist-items">
+          
+        </ul>
+      </div>
+    </div>
+    
+    <div id="search-tab" class="tab-content">
+      <div class="search-container">
+        <form id="search-form">
+          <div class="search-input-container">
+            <input type="text" id="search-input" placeholder="Search for songs...">
+            <button type="submit" class="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+        <div class="search-results">
+          <h3>Search Results</h3>
+          <ul id="search-results">
+            <div class="empty-message">Search for songs to display results</div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id="favorites-tab" class="tab-content">
+      <div class="favorites">
+        <h3>My Favorites</h3>
+        <ul id="favorites-items">
+            <li class="song-item" data-id="songId">
+                <span class="song-title">Song Name</span>
+                <button class="favorite-btn" title="Add to Favorites">
+                  <i class="far fa-heart"></i>
+                </button>
+              </li>
+              
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="notification" class="notification"></div>
+  
+  <audio id="audio"></audio>
+  
+  <script src="script.js"></script>
+</body>
+</html>
